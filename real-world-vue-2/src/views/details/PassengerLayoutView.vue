@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { usePassengerStore, useAirlineStore } from '@/stores/passenger';
 import { storeToRefs } from 'pinia';
+
 const storePassenger = usePassengerStore()
 const passenger = storeToRefs(storePassenger).passenger
 const storeAirline = useAirlineStore()

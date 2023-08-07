@@ -4,13 +4,16 @@ import type { Passenger } from '@/type'
 import { ref, watchEffect } from 'vue'
 import type { Ref } from 'vue'
 import PassengerService from '@/services/PassengerService'
+
 const passengers: Ref<Array<Passenger>> = ref([])
+
 const props = defineProps({
   page: {
     type: Number,
     required: true
   }
 })
+
 watchEffect(() => {
   PassengerService.getPassengers(10, props.page).then((response) => {
     passengers.value = response.data
@@ -32,11 +35,13 @@ watchEffect(() => {
   place-items: center;
   row-gap: 3rem;
 }
+
 @media (max-width: 1149px) {
   .container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (max-width: 859px) {
   .container {
     grid-template-columns: 1fr;

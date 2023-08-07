@@ -5,15 +5,18 @@ import { useRouter } from 'vue-router'
 import { useMessageStore } from '@/stores/message'
 import { storeToRefs } from 'pinia'
 import NProgress from 'nprogress'
+
 const props = defineProps({
   passenger: {
     type: Object as PropType<Passenger>,
     require: true
   }
 })
+
 const router = useRouter()
 const store = useMessageStore()
 const { message } = storeToRefs(store)
+
 const edit = () => {
   NProgress.start()
   store.updateMessage('The update is in progress...')

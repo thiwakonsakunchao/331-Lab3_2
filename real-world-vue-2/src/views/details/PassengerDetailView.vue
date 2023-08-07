@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { type Passenger } from '@/type'
 import type { PropType } from 'vue'
+
 defineProps({
   passenger: {
     type: Object as PropType<Passenger>,
